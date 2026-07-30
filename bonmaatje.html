@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BonMaatje - Scan je kassabon. Bewaar je garantie.</title>
+    <style>
+        :root {
+            --bg-dark: #071126;
+            --panel-dark: #0d1f42;
+            --orange-accent: #ff7900;
+            --blue-brand: #10316b;
+            --text-light: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(180deg, #030a17 0%, var(--bg-dark) 100%);
+            padding: 80px 20px 40px 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin: 0 0 10px 0;
+            color: var(--text-light);
+            letter-spacing: 1px;
+        }
+
+        h1 span {
+            color: var(--orange-accent);
+        }
+
+        .tagline {
+            font-size: 1.4rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            font-weight: 300;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--orange-accent), #e05300);
+            color: white;
+            padding: 16px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 4px 20px rgba(255, 121, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(255, 121, 0, 0.5);
+        }
+
+        .intro-text {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .main-content {
+            padding: 40px 0;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--orange-accent);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background-color: var(--panel-dark);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 121, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--orange-accent);
+            transform: translateY(-2px);
+        }
+
+        .card h3 {
+            color: var(--text-light);
+            margin-top: 0;
+            font-size: 1.4rem;
+            border-bottom: 2px solid var(--orange-accent);
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            margin-bottom: 0;
+            margin-top: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 60px;
+        }
+
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin: 5px 0;
+        }
+
+        footer a {
+            color: var(--orange-accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Bon<span>Maatje</span></h1>
+            <p class="tagline">Verlies nooit meer een kassabon of garantie. Jouw persoonlijke digitale administratie.</p>
+            <a href="https://play.google.com/store/apps/details?id=nl.webpearl.bonmaatje" class="download-btn">Download on Google Play</a>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <p class="intro-text">
+            Maak eenvoudig een foto van je kassabon, sla hem veilig op en laat de app de rest doen. 
+            Geen rondslingerende, vervaagde bonnetjes meer in huis en altijd je bewijs bij de hand wanneer je het nodig hebt. 
+            Of het nu gaat om een nieuwe televisie, een wasmachine of elektronica; met BonMaatje bescherm je jouw aankopen en consumentenrechten.
+        </p>
+
+        <h2>Waarom kiezen voor BonMaatje?</h2>
+        <div class="features-grid">
+            <div class="card">
+                <h3>Eenvoudig scannen</h3>
+                <p>Digitaliseer je papieren kassabonnen in een handomdraai met de snelle en slimme ingebouwde camera-scanner.</p>
+            </div>
+            <div class="card">
+                <h3>Garantiebewaking</h3>
+                <p>Vul de garantieperiode van je product in. BonMaatje houdt de resterende tijd nauwkeurig en overzichtelijk voor je bij.</p>
+            </div>
+            <div class="card">
+                <h3>Slimme meldingen</h3>
+                <p>Ontvang automatisch een waarschuwing op je telefoon wanneer de garantie bijna verloopt. Zo ben je altijd op tijd.</p>
+            </div>
+            <div class="card">
+                <h3>Directe reparatiehulp</h3>
+                <p>Apparaat defect? Met één druk op de knop zoekt BonMaatje via internet naar de dichtstbijzijnde reparateur op basis van jouw productgegevens.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 WebPearl Dev / appPe@rl. Alle rechten voorbehouden.</p>
+        <p><a href="https://webpearl-dev.github.io/privacy-policy/bonmaatje">Privacy Policy</a></p>
+    </footer>
+
+</body>
+</html>
