@@ -1,2 +1,2 @@
 # webpearl
-Privacy policy and promotional pages for my apps hosted via GitHub Pages
+Promotional pages for my apps hosted via GitHub Pages
