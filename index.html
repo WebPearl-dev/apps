@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebPearl Dev - Apps & Games</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(180deg, #020617 0%, var(--bg-color) 100%);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .app-card {
+            background-color: var(--card-bg);
+            border: 1px solid #334155;
+            border-radius: 16px;
+            padding: 25px;
+            text-decoration: none;
+            color: var(--text-main);
+            transition: transform 0.2s, border-color 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .app-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .app-card h2 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            color: var(--accent);
+        }
+
+        .app-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+
+        .view-btn {
+            display: inline-block;
+            margin-top: 15px;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid #334155;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>WebPearl Dev</h1>
+        <p class="subtitle">Ontdek mijn mobiele applicaties en games</p>
+    </header>
+
+    <main class="container">
+        <div class="apps-grid">
+
+            <!-- Kaart voor WitchGuide -->
+            <a href="witchguide.html" class="app-card">
+                <div>
+                    <h2>WitchGuide</h2>
+                    <p>Je digitale metgezel voor dagelijkse rituelen, magie en spirituele wijsheid.</p>
+                </div>
+                <span class="view-btn">Bekijk app &rarr;</span>
+            </a>
+
+            <!-- Kaart voor BonMaatje -->
+            <a href="bonmaatje.html" class="app-card">
+                <div>
+                    <h2>BonMaatje</h2>
+                    <p>Beheer en organiseer je bonnen en uitgaven op een slimme manier.</p>
+                </div>
+                <span class="view-btn">Bekijk app &rarr;</span>
+            </a>
+
+            <!-- Kaart voor BugOff -->
+            <a href="bugoff.html" class="app-card">
+                <div>
+                    <h2>BugOff</h2>
+                    <p>Scan je voeding in de supermarkt en ontdek direct of er insecten in zijn verwerkt.</p>
+                </div>
+                <span class="view-btn">Bekijk app &rarr;</span>
+            </a>
+
+            <!-- Kaart voor E-Nee -->
+            <a href="e-nee.html" class="app-card">
+                <div>
+                    <h2>E-Nee</h2>
+                    <p>Scan ingrediënten en E-nummers om direct te zien wat je écht eet.</p>
+                </div>
+                <span class="view-btn">Bekijk app &rarr;</span>
+            </a>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 WebPearl Dev. Alle rechten voorbehouden.</p>
+    </footer>
+
+</body>
+</html>
