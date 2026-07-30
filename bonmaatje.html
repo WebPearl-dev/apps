@@ -78,10 +78,51 @@
             text-align: center;
             font-size: 1.1rem;
             color: var(--text-muted);
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
+        }
+
+        /* SCREENSHOT SLIDER STYLING */
+        .screenshot-slider {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding: 20px 10px;
+            margin: 20px 0 60px 0;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* Verberg de lelijke scrollbalk in Chrome/Safari */
+        .screenshot-slider::-webkit-scrollbar {
+            height: 8px;
+        }
+        .screenshot-slider::-webkit-scrollbar-track {
+            background: var(--bg-dark);
+        }
+        .screenshot-slider::-webkit-scrollbar-thumb {
+            background: #1e3a6d;
+            border-radius: 10px;
+        }
+
+        .screenshot-wrapper {
+            flex: 0 0 auto;
+            width: 240px;
+            transition: transform 0.3s ease;
+        }
+
+        .screenshot-wrapper:hover {
+            transform: scale(1.03);
+        }
+
+        .screenshot-wrapper img {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            border: 2px solid rgba(255, 121, 0, 0.2);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
         }
 
         .main-content {
@@ -159,7 +200,7 @@
         <div class="container">
             <h1>Bon<span>Maatje</span></h1>
             <p class="tagline">Verlies nooit meer een kassabon of garantie. Jouw persoonlijke digitale administratie.</p>
-            <a href="https://play.google.com/store/apps/details?id=nl.webpearl.bonmaatje" class="download-btn">Download on Google Play</a>
+            <a href="https://google.com" class="download-btn">Download on Google Play</a>
         </div>
     </header>
 
@@ -169,6 +210,31 @@
             Geen rondslingerende, vervaagde bonnetjes meer in huis en altijd je bewijs bij de hand wanneer je het nodig hebt. 
             Of het nu gaat om een nieuwe televisie, een wasmachine of elektronica; met BonMaatje bescherm je jouw aankopen en consumentenrechten.
         </p>
+
+        <!-- AFBEELDINGEN SLIDER (7 SCREENSHOTS) -->
+        <div class="screenshot-slider">
+            <div class="screenshot-wrapper">
+                <img src="images/bonmaatje/bonmaatje_00.webp" alt="BonMaatje Splashscreen">
+            </div>
+            <div class="screenshot-wrapper">
+                <img src="images/bonmaatje/bonmaatje_01.webp" alt="BonMaatje Screenshot 1">
+            </div>
+            <div class="screenshot-wrapper">
+                <img src="images/bonmaatje/bonmaatje_02.webp" alt="BonMaatje Screenshot 2">
+            </div>
+            <div class="screenshot-wrapper">
+                <img src="images/bonmaatje/bonmaatje_03.webp" alt="BonMaatje Screenshot 3">
+            </div>
+            <div class="screenshot-wrapper">
+                <img src="images/bonmaatje/bonmaatje_04.webp" alt="BonMaatje Screenshot 4">
+            </div>
+            <div class="screenshot-wrapper">
+                <img src="images/bonmaatje/bonmaatje_05.webp" alt="BonMaatje Screenshot 5">
+            </div>
+            <div class="screenshot-wrapper">
+                <img src="images/bonmaatje/bonmaatje_06.webp" alt="BonMaatje Screenshot 6">
+            </div>
+        </div>
 
         <h2>Waarom kiezen voor BonMaatje?</h2>
         <div class="features-grid">
@@ -193,7 +259,7 @@
 
     <footer>
         <p>&copy; 2026 WebPearl Dev / appPe@rl. Alle rechten voorbehouden.</p>
-        <p><a href="https://webpearl-dev.github.io/privacy-policy/bonmaatje">Privacy Policy</a></p>
+        <p><a href="https://github.io">Privacy Policy</a></p>
     </footer>
 
 </body>
