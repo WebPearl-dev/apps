@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BugOff - Insectenscanner voor voeding</title>
+    <style>
+        :root {
+            --bg-dark: #0f111a;
+            --panel-dark: #161925;
+            --red-alert: #e53e3e;
+            --green-safe: #38a169;
+            --text-light: #f7fafc;
+            --text-muted: #a0aec0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(180deg, #090a10 0%, var(--bg-dark) 100%);
+            padding: 80px 20px 40px 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin: 0 0 10px 0;
+            color: var(--text-light);
+            letter-spacing: 1px;
+        }
+
+        h1 span {
+            color: var(--red-alert);
+        }
+
+        .tagline {
+            font-size: 1.4rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            font-weight: 300;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--red-alert), #b83232);
+            color: white;
+            padding: 16px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 4px 20px rgba(229, 62, 62, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(229, 62, 62, 0.5);
+        }
+
+        .intro-text {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .main-content {
+            padding: 40px 0;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--red-alert);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background-color: var(--panel-dark);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(229, 62, 62, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--red-alert);
+            transform: translateY(-2px);
+        }
+
+        .card h3 {
+            color: var(--text-light);
+            margin-top: 0;
+            font-size: 1.4rem;
+            border-bottom: 2px solid var(--red-alert);
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            margin-bottom: 0;
+            margin-top: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 60px;
+        }
+
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin: 5px 0;
+        }
+
+        footer a {
+            color: var(--red-alert);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Bug<span>Off</span></h1>
+            <p class="tagline">Controleer in een handomdraai of er insecten zijn verwerkt in jouw voedingsmiddelen.</p>
+            <a href="https://play.google.com/store/apps/details?id=nl.webpearl.insectenscanner" class="download-btn">Download on Google Play</a>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <p class="intro-text">
+            Richt de camera van je telefoon simpelweg op de barcode van een productverpakking. 
+            De app scant de streepjescode, raadpleegt direct de database en controleert de ingrediëntenlijst op de aanwezigheid van insecten 
+            (zoals meelwormen, krekels of sprinkhanen). Ideaal voor iedereen die bewust kiest wat hij eet!
+        </p>
+
+        <h2>Belangrijkste functionaliteiten</h2>
+        <div class="features-grid">
+            <div class="card">
+                <h3>Bliksemsnel scannen</h3>
+                <p>Scan streepjescodes in de supermarkt binnen een fractie van een seconde met de ingebouwde camera-scanner.</p>
+            </div>
+            <div class="card">
+                <h3>Database check</h3>
+                <p>De app raadpleegt direct een uitgebreide ingrediëntenlijst om ongewenste toevoegingen zoals meelwormen of krekels op te sporen.</p>
+            </div>
+            <div class="card">
+                <h3>Historie overzicht</h3>
+                <p>Houd eenvoudig een lijst bij van eerder gescande producten, zodat je jouw favoriete veilige keuzes altijd snel terugvindt.</p>
+            </div>
+            <div class="card">
+                <h3>Educatieve info</h3>
+                <p>Bekijk nuttige achtergrondinformatie en veelgestelde vragen over de regelgeving rondom insecten in ons voedsel.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 WebPearl Dev / appPe@rl. Alle rechten voorbehouden.</p>
+        <p><a href="https://webpearl-dev.github.io/privacy-policy/bugoff">Privacy Policy</a></p>
+    </footer>
+
+</body>
+</html>
