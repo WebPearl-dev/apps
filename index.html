@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebPearl Dev - Apps & Games</title>
+    <title>WebPearl Dev - Portfolio</title>
     <style>
         :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
+            --bg-color: #0b0f19;
+            --card-bg: #151b2c;
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
-            --accent: #38bdf8;
+            --accent-apps: #38bdf8;
+            --accent-games: #a855f7;
+            --border-color: #222f47;
         }
 
         body {
@@ -23,80 +25,124 @@
 
         header {
             text-align: center;
-            padding: 60px 20px;
+            padding: 80px 20px 40px 20px;
             background: linear-gradient(180deg, #020617 0%, var(--bg-color) 100%);
         }
 
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            color: var(--text-main);
+        header h1 {
+            font-size: 3rem;
+            margin: 0 0 10px 0;
+            background: linear-gradient(45deg, var(--accent-apps), var(--accent-games));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .subtitle {
             color: var(--text-muted);
-            font-size: 1.1rem;
-            margin-bottom: 0;
+            font-size: 1.2rem;
+            margin: 0;
+            font-weight: 300;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 20px;
         }
 
-        .apps-grid {
+        h2 {
+            font-size: 2rem;
+            margin: 50px 0 25px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-apps h2 { color: var(--accent-apps); }
+        .section-games h2 { color: var(--accent-games); }
+
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
         }
 
-        .app-card {
+        .card {
             background-color: var(--card-bg);
-            border: 1px solid #334155;
+            border: 1px solid var(--border-color);
             border-radius: 16px;
             padding: 25px;
             text-decoration: none;
             color: var(--text-main);
-            transition: transform 0.2s, border-color 0.2s;
+            transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            position: relative;
+            overflow: hidden;
         }
 
-        .app-card:hover {
+        .card:hover {
             transform: translateY(-5px);
-            border-color: var(--accent);
         }
 
-        .app-card h2 {
-            margin-top: 0;
-            font-size: 1.5rem;
-            color: var(--accent);
+        .section-apps .card:hover {
+            border-color: var(--accent-apps);
+            box-shadow: 0 5px 15px rgba(56, 189, 248, 0.1);
         }
 
-        .app-card p {
+        .section-games .card:hover {
+            border-color: var(--accent-games);
+            box-shadow: 0 5px 15px rgba(168, 85, 247, 0.1);
+        }
+
+        .card h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.6rem;
+        }
+
+        .card p {
             color: var(--text-muted);
             font-size: 0.95rem;
-            line-height: 1.5;
+            line-height: 1.6;
+            margin: 0;
             flex-grow: 1;
         }
 
+        .badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
+        }
+
+        .badge-live { background-color: rgba(56, 189, 248, 0.15); color: var(--accent-apps); }
+        .badge-dev { background-color: rgba(234, 179, 8, 0.15); color: #eab308; }
+
         .view-btn {
             display: inline-block;
-            margin-top: 15px;
-            color: var(--accent);
+            margin-top: 20px;
             font-weight: bold;
             font-size: 0.9rem;
+            transition: color 0.2s;
         }
+
+        .section-apps .view-btn { color: var(--accent-apps); }
+        .section-games .view-btn { color: var(--accent-games); }
 
         footer {
             text-align: center;
-            padding: 40px 20px;
+            padding: 60px 20px 40px 20px;
             color: var(--text-muted);
-            font-size: 0.85rem;
-            border-top: 1px solid #334155;
-            margin-top: 60px;
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 80px;
         }
     </style>
 </head>
@@ -104,50 +150,96 @@
 
     <header>
         <h1>WebPearl Dev</h1>
-        <p class="subtitle">Ontdek mijn mobiele applicaties en games</p>
+        <p class="subtitle">Mobiele Applicaties & Games Portfolio</p>
     </header>
 
-    <main class="container">
-        <div class="apps-grid">
+    <div class="container">
 
-            <!-- Kaart voor WitchGuide -->
-            <a href="witchguide.html" class="app-card">
-                <div>
-                    <h2>WitchGuide</h2>
-                    <p>Je digitale metgezel voor dagelijkse rituelen, magie en spirituele wijsheid.</p>
-                </div>
-                <span class="view-btn">Bekijk app &rarr;</span>
-            </a>
+        <!-- SECTIE: APPLICATIES -->
+        <section class="section-apps">
+            <h2>📱 Applicaties</h2>
+            <div class="grid">
+                <a href="witchguide.html" class="card">
+                    <span class="badge badge-live">Live</span>
+                    <div>
+                        <h3>WitchGuide</h3>
+                        <p>Je digitale metgezel voor dagelijkse rituelen, magie en spirituele wijsheid.</p>
+                    </div>
+                    <span class="view-btn">Bekijk app &rarr;</span>
+                </a>
 
-            <!-- Kaart voor BonMaatje -->
-            <a href="bonmaatje.html" class="app-card">
-                <div>
-                    <h2>BonMaatje</h2>
-                    <p>Beheer en organiseer je bonnen en uitgaven op een slimme manier.</p>
-                </div>
-                <span class="view-btn">Bekijk app &rarr;</span>
-            </a>
+                <a href="bonmaatje.html" class="card">
+                    <span class="badge badge-live">Live</span>
+                    <div>
+                        <h3>BonMaatje</h3>
+                        <p>Verlies nooit meer een kassabon of garantie. Jouw persoonlijke digitale administratie voor al je aankopen.</p>
+                    </div>
+                    <span class="view-btn">Bekijk app &rarr;</span>
+                </a>
 
-            <!-- Kaart voor BugOff -->
-            <a href="bugoff.html" class="app-card">
-                <div>
-                    <h2>BugOff</h2>
-                    <p>Scan je voeding in de supermarkt en ontdek direct of er insecten in zijn verwerkt.</p>
-                </div>
-                <span class="view-btn">Bekijk app &rarr;</span>
-            </a>
+                <a href="bugoff.html" class="card">
+                    <span class="badge badge-live">Live</span>
+                    <div>
+                        <h3>BugOff</h3>
+                        <p>Scan voeding in de supermarkt met je camera en ontdek direct of er insecten in zijn verwerkt.</p>
+                    </div>
+                    <span class="view-btn">Bekijk app &rarr;</span>
+                </a>
 
-            <!-- Kaart voor E-Nee -->
-            <a href="e-nee.html" class="app-card">
-                <div>
-                    <h2>E-Nee</h2>
-                    <p>Scan ingrediënten en E-nummers om direct te zien wat je écht eet.</p>
-                </div>
-                <span class="view-btn">Bekijk app &rarr;</span>
-            </a>
+                <a href="e-nee.html" class="card">
+                    <span class="badge badge-live">Live</span>
+                    <div>
+                        <h3>E-nee</h3>
+                        <p>Scan ingrediëntenlijsten en barcodes om verborgen E-nummers en schadelijke stoffen te vermijden.</p>
+                    </div>
+                    <span class="view-btn">Bekijk app &rarr;</span>
+                </a>
+            </div>
+        </section>
 
-        </div>
-    </main>
+        <!-- SECTIE: GAMES -->
+        <section class="section-games">
+            <h2>🎮 Games</h2>
+            <div class="grid">
+                <a href="#" class="card" onclick="return false;">
+                    <span class="badge badge-dev">In Ontwikkeling</span>
+                    <div>
+                        <h3>Dragon Crystal Remake</h3>
+                        <p>Een eerbetoon en moderne recreatie van de klassieke Sega-game. Verken mysterieuze kerkers en vecht tegen monsters.</p>
+                    </div>
+                    <span class="view-btn">Binnenkort beschikbaar</span>
+                </a>
+
+                <a href="#" class="card" onclick="return false;">
+                    <span class="badge badge-dev">In Ontwikkeling</span>
+                    <div>
+                        <h3>Rummikub</h3>
+                        <p>Het klassieke cijferspel, vloeiend en digitaal herbouwd voor urenlang tactisch speelplezier.</p>
+                    </div>
+                    <span class="view-btn">Binnenkort beschikbaar</span>
+                </a>
+
+                <a href="#" class="card" onclick="return false;">
+                    <span class="badge badge-dev">In Ontwikkeling</span>
+                    <div>
+                        <h3>Yatzing</h3>
+                        <p>Gooi de dobbelstenen, scoor de beste combinaties en daag jezelf uit in dit klassieke en verslavende kansspel.</p>
+                    </div>
+                    <span class="view-btn">Binnenkort beschikbaar</span>
+                </a>
+
+                <a href="#" class="card" onclick="return false;">
+                    <span class="badge badge-dev">Gepland</span>
+                    <div>
+                        <h3>LoGD Remake</h3>
+                        <p>De legendarische tekst-RPG Legend of the Green Dragon, volledig gemoderniseerd voor een nieuwe generatie avonturiers.</p>
+                    </div>
+                    <span class="view-btn">Gepland</span>
+                </a>
+            </div>
+        </section>
+
+    </div>
 
     <footer>
         <p>&copy; 2026 WebPearl Dev. Alle rechten voorbehouden.</p>
