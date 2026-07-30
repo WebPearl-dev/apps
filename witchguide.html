@@ -70,6 +70,57 @@
             box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
         }
 
+        .intro-text {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* SCREENSHOT SLIDER STYLING */
+        .screenshot-slider {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding: 20px 10px;
+            margin: 20px 0 60px 0;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* Verberg de lelijke scrollbalk in Chrome/Safari */
+        .screenshot-slider::-webkit-scrollbar {
+            height: 8px;
+        }
+        .screenshot-slider::-webkit-scrollbar-track {
+            background: var(--bg-dark);
+        }
+        .screenshot-slider::-webkit-scrollbar-thumb {
+            background: #251c4a;
+            border-radius: 10px;
+        }
+
+        .screenshot-wrapper {
+            flex: 0 0 auto;
+            width: 240px;
+            transition: transform 0.3s ease;
+        }
+
+        .screenshot-wrapper:hover {
+            transform: scale(1.03);
+        }
+
+        .screenshot-wrapper img {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            border: 2px solid rgba(255, 215, 0, 0.2);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+        }
+
         .main-content {
             padding: 60px 0;
         }
@@ -140,11 +191,40 @@
         <div class="container">
             <h1>WitchGuide</h1>
             <p class="tagline">Your digital companion for daily rituals, magic, and spiritual wisdom.</p>
-            <a href="https://play.google.com/store/apps/details?id=nl.webpearl.witchguide" class="download-btn">Download on Google Play</a>
+            <a href="https://google.com" class="download-btn">Download on Google Play</a>
         </div>
     </header>
 
     <main class="container main-content">
+        
+        <!-- AFBEELDINGEN SLIDER (8 SCREENSHOTS) -->
+        <div class="screenshot-slider">
+            <div class="screenshot-wrapper">
+                <img src="images/witchguide/witchguide_00.webp" alt="WitchGuide Screenshot 0">
+            </div>
+            <div class="screenshot-wrapper">
+                <img src="images/witchguide/witchguide_01.webp" alt="WitchGuide Screenshot 1">
+            </div>
+            <div class="screenshot-wrapper">
+                <img src="images/witchguide/witchguide_02.webp" alt="WitchGuide Screenshot 2">
+            </div>
+            <div class="screenshot-wrapper">
+                <img src="images/witchguide/witchguide_03.webp" alt="WitchGuide Screenshot 3">
+            </div>
+            <div class="screenshot-wrapper">
+                <img src="images/witchguide/witchguide_04.webp" alt="WitchGuide Screenshot 4">
+            </div>
+            <div class="screenshot-wrapper">
+                <img src="images/witchguide/witchguide_05.webp" alt="WitchGuide Screenshot 5">
+            </div>
+            <div class="screenshot-wrapper">
+                <img src="images/witchguide/witchguide_06.webp" alt="WitchGuide Screenshot 6">
+            </div>
+            <div class="screenshot-wrapper">
+                <img src="images/witchguide/witchguide_07.webp" alt="WitchGuide Screenshot 7">
+            </div>
+        </div>
+
         <h2>Discover the Features</h2>
         <div class="features-grid">
             <div class="card">
@@ -164,7 +244,7 @@
 
     <footer>
         <p>&copy; 2026 WebPearl Dev. All rights reserved.</p>
-        <p><a href="https://webpearl-dev.github.io/privacy-policy/witchguide">Privacy Policy</a></p>
+        <p><a href="https://github.io">Privacy Policy</a></p>
     </footer>
 
 </body>
