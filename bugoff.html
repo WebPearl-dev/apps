@@ -78,10 +78,51 @@
             text-align: center;
             font-size: 1.1rem;
             color: var(--text-muted);
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
+        }
+
+        /* SCREENSHOT SLIDER STYLING */
+        .screenshot-slider {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding: 20px 10px;
+            margin: 20px 0 60px 0;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* Verberg de lelijke scrollbalk in Chrome/Safari */
+        .screenshot-slider::-webkit-scrollbar {
+            height: 8px;
+        }
+        .screenshot-slider::-webkit-scrollbar-track {
+            background: var(--bg-dark);
+        }
+        .screenshot-slider::-webkit-scrollbar-thumb {
+            background: #2d3142;
+            border-radius: 10px;
+        }
+
+        .screenshot-wrapper {
+            flex: 0 0 auto;
+            width: 240px;
+            transition: transform 0.3s ease;
+        }
+
+        .screenshot-wrapper:hover {
+            transform: scale(1.03);
+        }
+
+        .screenshot-wrapper img {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            border: 2px solid rgba(229, 62, 62, 0.2);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
         }
 
         .main-content {
@@ -159,7 +200,7 @@
         <div class="container">
             <h1>Bug<span>Off</span></h1>
             <p class="tagline">Controleer in een handomdraai of er insecten zijn verwerkt in jouw voedingsmiddelen.</p>
-            <a href="https://play.google.com/store/apps/details?id=nl.webpearl.insectenscanner" class="download-btn">Download on Google Play</a>
+            <a href="https://google.com" class="download-btn">Download on Google Play</a>
         </div>
     </header>
 
@@ -169,6 +210,31 @@
             De app scant de streepjescode, raadpleegt direct de database en controleert de ingrediëntenlijst op de aanwezigheid van insecten 
             (zoals meelwormen, krekels of sprinkhanen). Ideaal voor iedereen die bewust kiest wat hij eet!
         </p>
+
+        <!-- AFBEELDINGEN SLIDER (7 SCREENSHOTS) -->
+        <div class="screenshot-slider">
+            <div class="screenshot-wrapper">
+                <img src="images/bugoff/bugoff_00.webp" alt="BugOff Screenshot 0">
+            </div>
+            <div class="screenshot-wrapper">
+                <img src="images/bugoff/bugoff_01.webp" alt="BugOff Screenshot 1">
+            </div>
+            <div class="screenshot-wrapper">
+                <img src="images/bugoff/bugoff_02.webp" alt="BugOff Screenshot 2">
+            </div>
+            <div class="screenshot-wrapper">
+                <img src="images/bugoff/bugoff_03.webp" alt="BugOff Screenshot 3">
+            </div>
+            <div class="screenshot-wrapper">
+                <img src="images/bugoff/bugoff_04.webp" alt="BugOff Screenshot 4">
+            </div>
+            <div class="screenshot-wrapper">
+                <img src="images/bugoff/bugoff_05.webp" alt="BugOff Screenshot 5">
+            </div>
+            <div class="screenshot-wrapper">
+                <img src="images/bugoff/bugoff_06.webp" alt="BugOff Screenshot 6">
+            </div>
+        </div>
 
         <h2>Belangrijkste functionaliteiten</h2>
         <div class="features-grid">
@@ -193,7 +259,7 @@
 
     <footer>
         <p>&copy; 2026 WebPearl Dev / appPe@rl. Alle rechten voorbehouden.</p>
-        <p><a href="https://webpearl-dev.github.io/privacy-policy/bugoff">Privacy Policy</a></p>
+        <p><a href="https://github.io">Privacy Policy</a></p>
     </footer>
 
 </body>
