@@ -43,6 +43,21 @@
         .back-btn:hover {
             transform: translateX(-5px);
         }
+        .translate-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        /* Zorgt dat het Google-menuutje netjes matcht bij een donker thema */
+        .goog-te-combo {
+            background-color: var(--panel-dark) !important;
+            color: var(--text-light) !important;
+            border: 1px solid rgba(255,255,255,0.2) !important;
+            padding: 6px 10px !important;
+            border-radius: 8px !important;
+            font-family: inherit !important;
+        }
 
         header {
             background: linear-gradient(180deg, #030a07 0%, var(--bg-dark) 100%);
@@ -215,6 +230,21 @@
     </style>
 </head>
 <body>
+    <!-- GOOGLE VERTAALKNOP -->
+    <div class="translate-container">
+        <div id="google_translate_element"></div>
+    </div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'nl', 
+                includedLanguages: 'en,de,fr,es,it', // Talen die je wilt aanbieden
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//://google.com"></script>
 
     <!-- TERUGKNOP BOVENAAN -->
     <div class="nav-container">
