@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PythoGo - Ontdek de Kracht van de Natuur</title>
+    <style>
+        :root {
+            --bg-dark: #07140e;
+            --panel-dark: #0f291e;
+            --green-accent: #48bb78;
+            --mint-light: #c6f6d5;
+            --text-light: #f7fafc;
+            --text-muted: #a0aec0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(180deg, #030a07 0%, var(--bg-dark) 100%);
+            padding: 80px 20px 40px 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin: 0 0 10px 0;
+            color: var(--text-light);
+            letter-spacing: 1px;
+        }
+
+        h1 span {
+            color: var(--green-accent);
+        }
+
+        .tagline {
+            font-size: 1.4rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            font-weight: 300;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--green-accent), #2f855a);
+            color: white;
+            padding: 16px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 4px 20px rgba(72, 187, 120, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(72, 187, 120, 0.4);
+        }
+
+        .intro-text {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* SCREENSHOT SLIDER STYLING */
+        .screenshot-slider {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding: 20px 10px;
+            margin: 20px 0 60px 0;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .screenshot-slider::-webkit-scrollbar {
+            height: 8px;
+        }
+        .screenshot-slider::-webkit-scrollbar-track {
+            background: var(--bg-dark);
+        }
+        .screenshot-slider::-webkit-scrollbar-thumb {
+            background: #1c3d2e;
+            border-radius: 10px;
+        }
+
+        .screenshot-wrapper {
+            flex: 0 0 auto;
+            width: 240px;
+            transition: transform 0.3s ease;
+        }
+
+        .screenshot-wrapper:hover {
+            transform: scale(1.03);
+        }
+
+        .screenshot-wrapper img {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            border: 2px solid rgba(72, 187, 120, 0.2);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .main-content {
+            padding: 40px 0;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--green-accent);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background-color: var(--panel-dark);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(72, 187, 120, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--green-accent);
+            transform: translateY(-2px);
+        }
+
+        .card h3 {
+            color: var(--text-light);
+            margin-top: 0;
+            font-size: 1.4rem;
+            border-bottom: 2px solid var(--green-accent);
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            margin-bottom: 0;
+            margin-top: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 60px;
+        }
+
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin: 5px 0;
+        }
+
+        footer a {
+            color: var(--green-accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Pytho<span>Go</span></h1>
+            <p class="tagline">Jouw gids in de wereld van kruiden-, plantaardige en natuurlijke recepten.</p>
+            <a href="https://play.google.com/store/apps/details?id=nl.webpearl.pythogo" class="download-btn">Download on Google Play</a>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <p class="intro-text">
+            Ontdek de kracht van de natuur op een veilige en bewuste manier. Met PythoGo vind en bewaar je eenvoudig de beste botanische recepten, 
+            leer je meer over de eigenschappen van planten en raadpleeg je officiële wetenschappelijke bronnen direct vanaf je smartphone.
+        </p>
+
+        <!-- AFBEELDINGEN SLIDER -->
+        <div class="screenshot-slider">
+            <div class="screenshot-wrapper">
+                <img src="images/pythogo/pythogo_00.webp" alt="PythoGo Screenshot 0">
+            </div>
+            <div class="screenshot-wrapper">
+                <img src="images/pythogo/pythogo_01.webp" alt="PythoGo Screenshot 1">
+            </div>
+            <div class="screenshot-wrapper">
+                <img src="images/pythogo/pythogo_02.webp" alt="PythoGo Screenshot 2">
+            </div>
+            <div class="screenshot-wrapper">
+                <img src="images/pythogo/pythogo_03.webp" alt="PythoGo Screenshot 3">
+            </div>
+        </div>
+
+        <h2>Belangrijkste functionaliteiten</h2>
+        <div class="features-grid">
+            <div class="card">
+                <h3>Botanische Recepten</h3>
+                <p>Krijg toegang tot een zorgvuldig samengestelde bibliotheek vol natuurlijke en plantaardige bereidingen.</p>
+            </div>
+            <div class="card">
+                <h3>Wetenschappelijke Bronnen</h3>
+                <p>Verifieer informatie snel en betrouwbaar dankzij ingebouwde, directe links naar het Europees Geneesmiddelenbureau (EMA).</p>
+            </div>
+            <div class="card">
+                <h3>Volledig Offline</h3>
+                <p>Geen internet? Geen probleem. De app werkt volledig lokaal en offline, zodat je je gids altijd bij de hand hebt.</p>
+            </div>
+            <div class="card">
+                <h3>Privacy Eerst</h3>
+                <p>Geen verplichte accounts of e-mailadressen. Al jouw opgeslagen voorkeuren blijven strikt op je eigen apparaat.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 WebPearl Dev / appPe@rl. Alle rechten voorbehouden.</p>
+        <p><a href="https://webpearl-dev.github.io/privacy-policy/pythogo">Privacy Policy</a></p>
+    </footer>
+
+</body>
+</html>
