@@ -24,6 +24,26 @@
             color: var(--text-light);
             line-height: 1.6;
         }
+        .nav-container {
+            max-width: 900px;
+            margin: 20px auto 0 auto;
+            padding: 0 20px;
+            text-align: left;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            color: var(--green-magic); /* Verander dit eventueel naar --orange-accent of --red-alert per app! */
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95rem;
+            transition: transform 0.2s;
+        }
+
+        .back-btn:hover {
+            transform: translateX(-5px);
+        }
 
         header {
             background: linear-gradient(180deg, #020408 0%, var(--bg-dark) 100%);
@@ -198,6 +218,10 @@
     </style>
 </head>
 <body>
+    <!-- TERUGKNOP BOVENAAN -->
+    <div class="nav-container">
+        <a href="index.html" class="back-btn">&larr; Terug naar overzicht</a>
+    </div>
 
     <header>
         <div class="container">
@@ -264,7 +288,7 @@
 
     <footer>
         <p>&copy; 2026 WebPe@rl / AppPe@rl. Alle rechten voorbehouden.</p>
-        <p><a href="https://github.io">Privacy Policy</a></p>
+        <p><a href="https://webpearl-dev.github.io/privacy-policy/ene">Privacy Policy</a></p>
     </footer>
 
 </body>
