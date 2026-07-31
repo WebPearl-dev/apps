@@ -22,6 +22,26 @@
             color: var(--text-light);
             line-height: 1.6;
         }
+        .nav-container {
+            max-width: 900px;
+            margin: 20px auto 0 auto;
+            padding: 0 20px;
+            text-align: left;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            color: var(--orange-accent); /* Verander dit eventueel naar --orange-accent of --red-alert per app! */
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95rem;
+            transition: transform 0.2s;
+        }
+
+        .back-btn:hover {
+            transform: translateX(-5px);
+        }
 
         header {
             background: linear-gradient(180deg, #030a17 0%, var(--bg-dark) 100%);
@@ -195,7 +215,10 @@
     </style>
 </head>
 <body>
-
+    <!-- TERUGKNOP BOVENAAN -->
+    <div class="nav-container">
+        <a href="index.html" class="back-btn">&larr; Terug naar overzicht</a>
+    </div>
     <header>
         <div class="container">
             <h1>Bon<span>Maatje</span></h1>
