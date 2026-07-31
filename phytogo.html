@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PythoGo - Ontdek de Kracht van de Natuur</title>
+    <title>PhytoGo - Ontdek de Kracht van de Natuur</title>
     <style>
         :root {
             --bg-dark: #07140e;
@@ -23,9 +23,30 @@
             line-height: 1.6;
         }
 
+        .nav-container {
+            max-width: 900px;
+            margin: 20px auto 0 auto;
+            padding: 0 20px;
+            text-align: left;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            color: var(--green-accent);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95rem;
+            transition: transform 0.2s;
+        }
+
+        .back-btn:hover {
+            transform: translateX(-5px);
+        }
+
         header {
             background: linear-gradient(180deg, #030a07 0%, var(--bg-dark) 100%);
-            padding: 80px 20px 40px 20px;
+            padding: 40px 20px 40px 20px;
             text-align: center;
         }
 
@@ -195,33 +216,50 @@
 </head>
 <body>
 
+    <!-- TERUGKNOP BOVENAAN -->
+    <div class="nav-container">
+        <a href="index.html" class="back-btn">&larr; Terug naar overzicht</a>
+    </div>
+
     <header>
         <div class="container">
-            <h1>Pytho<span>Go</span></h1>
+            <h1>Phyto<span>Go</span></h1>
             <p class="tagline">Jouw gids in de wereld van kruiden-, plantaardige en natuurlijke recepten.</p>
-            <a href="https://play.google.com/store/apps/details?id=nl.webpearl.pythogo" class="download-btn">Download on Google Play</a>
+            <a href="https://google.com" class="download-btn">Download on Google Play</a>
         </div>
     </header>
 
     <main class="container main-content">
         <p class="intro-text">
-            Ontdek de kracht van de natuur op een veilige en bewuste manier. Met PythoGo vind en bewaar je eenvoudig de beste botanische recepten, 
+            Ontdek de kracht van de natuur op een veilige en bewuste manier. Met PhytoGo vind en bewaar je eenvoudig de beste botanische recepten, 
             leer je meer over de eigenschappen van planten en raadpleeg je officiële wetenschappelijke bronnen direct vanaf je smartphone.
         </p>
 
-        <!-- AFBEELDINGEN SLIDER -->
+        <!-- AFBEELDINGEN SLIDER (8 SCREENSHOTS) -->
         <div class="screenshot-slider">
             <div class="screenshot-wrapper">
-                <img src="images/pythogo/pythogo_00.webp" alt="PythoGo Screenshot 0">
+                <img src="images/phytogo/phytogo_00.webp" alt="PhytoGo Screenshot 0">
             </div>
             <div class="screenshot-wrapper">
-                <img src="images/pythogo/pythogo_01.webp" alt="PythoGo Screenshot 1">
+                <img src="images/phytogo/phytogo_01.webp" alt="PhytoGo Screenshot 1">
             </div>
             <div class="screenshot-wrapper">
-                <img src="images/pythogo/pythogo_02.webp" alt="PythoGo Screenshot 2">
+                <img src="images/phytogo/phytogo_02.webp" alt="PhytoGo Screenshot 2">
             </div>
             <div class="screenshot-wrapper">
-                <img src="images/pythogo/pythogo_03.webp" alt="PythoGo Screenshot 3">
+                <img src="images/phytogo/phytogo_03.webp" alt="PhytoGo Screenshot 3">
+            </div>
+            <div class="screenshot-wrapper">
+                <img src="images/phytogo/phytogo_04.webp" alt="PhytoGo Screenshot 4">
+            </div>
+            <div class="screenshot-wrapper">
+                <img src="images/phytogo/phytogo_05.webp" alt="PhytoGo Screenshot 5">
+            </div>
+            <div class="screenshot-wrapper">
+                <img src="images/phytogo/phytogo_06.webp" alt="PhytoGo Screenshot 6">
+            </div>
+            <div class="screenshot-wrapper">
+                <img src="images/phytogo/phytogo_07.webp" alt="PhytoGo Screenshot 7">
             </div>
         </div>
 
@@ -248,7 +286,7 @@
 
     <footer>
         <p>&copy; 2026 WebPearl Dev / appPe@rl. Alle rechten voorbehouden.</p>
-        <p><a href="https://webpearl-dev.github.io/privacy-policy/pythogo">Privacy Policy</a></p>
+        <p><a href="https://github.io">Privacy Policy</a></p>
     </footer>
 
 </body>
