@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RummyNumbers - WebPearl Games</title>
+    <style>
+        :root {
+            --bg-dark: #09111e;
+            --panel-dark: #121e31;
+            --tile-gold: #f59e0b;
+            --tile-wood: #d97706;
+            --text-light: #f8fafc;
+            --text-muted: #64748b;
+            --status-orange: #f97316;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .nav-container {
+            max-width: 900px;
+            margin: 20px auto 0 auto;
+            padding: 0 20px;
+            text-align: left;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            color: var(--tile-gold);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95rem;
+            transition: transform 0.2s;
+        }
+
+        .back-btn:hover {
+            transform: translateX(-5px);
+        }
+
+        .translate-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .goog-te-combo {
+            background-color: var(--panel-dark) !important;
+            color: var(--text-light) !important;
+            border: 1px solid var(--tile-wood) !important;
+            padding: 6px 10px !important;
+            border-radius: 8px !important;
+        }
+
+        header {
+            background: linear-gradient(180deg, #040810 0%, var(--bg-dark) 100%);
+            padding: 40px 20px 20px 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0 0 10px 0;
+            color: var(--text-light);
+            text-shadow: 0 4px 10px rgba(245, 158, 11, 0.2);
+            letter-spacing: 1px;
+        }
+
+        h1 span {
+            color: var(--tile-gold);
+        }
+
+        .status-box {
+            display: inline-block;
+            background-color: rgba(249, 115, 22, 0.1);
+            border: 1px solid var(--status-orange);
+            color: var(--status-orange);
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 1rem;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .intro-text {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .main-content {
+            padding: 20px 0;
+        }
+
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--tile-gold);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background-color: var(--panel-dark);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(217, 119, 6, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--tile-gold);
+            box-shadow: 0 4px 20px rgba(245, 158, 11, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .card h3 {
+            color: var(--tile-gold);
+            margin-top: 0;
+            font-size: 1.3rem;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            margin-bottom: 0;
+            margin-top: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(217, 119, 6, 0.1);
+            margin-top: 60px;
+        }
+
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin: 5px 0;
+        }
+
+        footer a {
+            color: var(--tile-gold);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- GOOGLE VERTAALKNOP -->
+    <div class="translate-container">
+        <div id="google_translate_element"></div>
+    </div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'nl', 
+                includedLanguages: 'en,de,fr,es,it',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="https://google.com"></script>
+
+    <!-- TERUGKNOP BOVENAAN -->
+    <div class="nav-container">
+        <a href="index.html" class="back-btn">&larr; Terug naar overzicht</a>
+    </div>
+
+    <header>
+        <div class="container">
+            <h1>Rummy<span>Numbers</span></h1>
+            <div class="status-box">Status: In Ontwikkeling</div>
+            <p class="tagline">Het legendarische en tactische cijferspel, volledig digitaal herbouwd.</p>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <p class="intro-text">
+            Maak slimme cijferreeksen, leg slimme combinaties en leg als eerste al je stenen op het digitale speelbord. 
+            RummyNumbers brengt de gezelligheid en tactiek van het klassieke bordspel rechtstreeks naar je smartphone, 
+            voorzien van een strak design en slimme computertegenstanders.
+        </p>
+
+        <h2>Spelkenmerken & Functies</h2>
+        <div class="features-grid">
+            <div class="card">
+                <h3>Tactische Cijferreeksen</h3>
+                <p>Combineer cijfers op basis van kleur (series) of opeenvolgende nummers (rijen) om je bord leeg te spelen.</p>
+            </div>
+            <div class="card">
+                <h3>Vloeiende Touch Controls</h3>
+                <p>Sleep en organiseer je stenen op je digitale plankje in een handomdraai dankzij de intuïtieve touchscreen bediening.</p>
+            </div>
+            <div class="card">
+                <h3>Slimme AI-Tegenstanders</h3>
+                <p>Daag jezelf uit tegen computergestuurde spelers van verschillende niveaus. Perfect om je tactiek te perfectioneren.</p>
+            </div>
+            <div class="card">
+                <h3>Urenlang Speelplezier</h3>
+                <p>Een ideaal spel voor snelle potjes tussendoor of lange, strategische avonden vol denkwerk op je smartphone.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 WebPe@rl / GamesPe@rl. Alle rechten voorbehouden.</p>
+        <p><a href="https://github.io">Privacy Policy</a></p>
+    </footer>
+
+</body>
+</html>
