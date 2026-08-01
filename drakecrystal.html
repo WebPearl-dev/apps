@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DrakeCrystal - WebPearl Games</title>
+    <style>
+        :root {
+            --bg-dark: #06020d;
+            --panel-dark: #120924;
+            --neon-cyan: #00f0ff;
+            --neon-purple: #9d4edd;
+            --text-light: #f1f0f5;
+            --text-muted: #7d7495;
+            --status-amber: #ffaa00;
+        }
+        
+        body {
+            font-family: 'Courier New', Courier, monospace; /* Lekkere retro game font */
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .nav-container {
+            max-width: 900px;
+            margin: 20px auto 0 auto;
+            padding: 0 20px;
+            text-align: left;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            color: var(--neon-cyan);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95rem;
+            transition: transform 0.2s;
+        }
+
+        .back-btn:hover {
+            transform: translateX(-5px);
+        }
+
+        .translate-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .goog-te-combo {
+            background-color: var(--panel-dark) !important;
+            color: var(--text-light) !important;
+            border: 1px solid var(--neon-purple) !important;
+            padding: 6px 10px !important;
+            border-radius: 8px !important;
+        }
+
+        header {
+            background: linear-gradient(180deg, #000000 0%, var(--bg-dark) 100%);
+            padding: 40px 20px 20px 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0 0 10px 0;
+            color: var(--text-light);
+            text-shadow: 0 0 10px var(--neon-purple), 0 0 20px var(--neon-cyan);
+            letter-spacing: 2px;
+        }
+
+        .status-box {
+            display: inline-block;
+            background-color: rgba(255, 170, 0, 0.1);
+            border: 1px dashed var(--status-amber);
+            color: var(--status-amber);
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 1rem;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .intro-text {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .main-content {
+            padding: 20px 0;
+        }
+
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--neon-cyan);
+            text-shadow: 0 0 5px rgba(0, 240, 255, 0.5);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background-color: var(--panel-dark);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(157, 78, 221, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--neon-cyan);
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .card h3 {
+            color: var(--neon-cyan);
+            margin-top: 0;
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            margin-bottom: 0;
+            margin-top: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(157, 78, 221, 0.1);
+            margin-top: 60px;
+        }
+
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin: 5px 0;
+        }
+
+        footer a {
+            color: var(--neon-cyan);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- GOOGLE VERTAALKNOP -->
+    <div class="translate-container">
+        <div id="google_translate_element"></div>
+    </div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'nl', 
+                includedLanguages: 'en,de,fr,es,it',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="https://google.com"></script>
+
+    <!-- TERUGKNOP BOVENAAN -->
+    <div class="nav-container">
+        <a href="index.html" class="back-btn">&larr; Terug naar overzicht</a>
+    </div>
+
+    <header>
+        <div class="container">
+            <h1>DrakeCrystal</h1>
+            <div class="status-box">Status: In Ontwikkeling</div>
+            <p class="tagline">Een episch eerbetoon en moderne recreatie van de klassieke 8-bit kerker-RPG.</p>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <p class="intro-text">
+            Ben jij klaar om de mysterieuze, steeds veranderende kerkers te betreden? DrakeCrystal brengt de nostalgische sfeer 
+            van de klassieke Sega-hit terug naar je smartphone, volledig herbouwd met soepele controls, uitdagende gameplay 
+            en procedureel gegenereerde levels. Elke reis is uniek!
+        </p>
+
+        <h2>Wat kun je verwachten?</h2>
+        <div class="features-grid">
+            <div class="card">
+                <h3>Oneindige Kerkers</h3>
+                <p>Verken doolhoven die bij elk spel volledig willekeurig worden opgebouwd. Je weet nooit wat er om de volgende hoek loert.</p>
+            </div>
+            <div class="card">
+                <h3>Tactische Gevechten</h3>
+                <p>Vecht tegen angstaanjagende monsters in turn-based gevechten waar elke stap en elke aanval strategisch telt.</p>
+            </div>
+            <div class="card">
+                <h3>Machtige Kristallen</h3>
+                <p>Verzamel zeldzame drake-kristallen en magische voorwerpen om je personage sterker te maken en dieper te overleven.</p>
+            </div>
+            <div class="card">
+                <h3>Echte Retro Sfeer</h3>
+                <p>Geniet van een design dat met liefde is ontworpen om de gouden eeuw van de 8-bit en 16-bit RPG's te eren.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 WebPe@rl / GamesPe@rl. Alle rechten voorbehouden.</p>
+        <p><a href="https://github.io">Privacy Policy</a></p>
+    </footer>
+
+</body>
+</html>
