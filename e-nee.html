@@ -16,14 +16,15 @@
             --orange-warn: #ed8936;
         }
         
-        body .back-btn
+        body {
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: var(--green-magic);
+            background-color: var(--bg-dark);
             color: var(--text-light);
             line-height: 1.6;
         }
+
         .nav-container {
             max-width: 900px;
             margin: 20px auto 0 auto;
@@ -34,7 +35,7 @@
         .back-btn {
             display: inline-flex;
             align-items: center;
-            color: var(--green-magic); /* Verander dit eventueel naar --orange-accent of --red-alert per app! */
+            color: var(--green-magic);
             text-decoration: none;
             font-weight: bold;
             font-size: 0.95rem;
@@ -45,9 +46,25 @@
             transform: translateX(-5px);
         }
 
+        .translate-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .goog-te-combo {
+            background-color: var(--panel-dark) !important;
+            color: var(--text-light) !important;
+            border: 1px solid rgba(255,255,255,0.2) !important;
+            padding: 6px 10px !important;
+            border-radius: 8px !important;
+            font-family: inherit !important;
+        }
+
         header {
             background: linear-gradient(180deg, #020408 0%, var(--bg-dark) 100%);
-            padding: 80px 20px 40px 20px;
+            padding: 40px 20px 40px 20px;
             text-align: center;
         }
 
@@ -118,7 +135,6 @@
             -webkit-overflow-scrolling: touch;
         }
 
-        /* Verberg de lelijke scrollbalk in Chrome/Safari */
         .screenshot-slider::-webkit-scrollbar {
             height: 8px;
         }
@@ -218,6 +234,23 @@
     </style>
 </head>
 <body>
+
+    <!-- GOOGLE VERTAALKNOP -->
+    <div class="translate-container">
+        <div id="google_translate_element"></div>
+    </div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'nl', 
+                includedLanguages: 'en,de,fr,es,it',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="https://google.com"></script>
+
     <!-- TERUGKNOP BOVENAAN -->
     <div class="nav-container">
         <a href="index.html" class="back-btn">&larr; Terug naar overzicht</a>
@@ -230,14 +263,13 @@
             <a href="https://play.google.com/store/apps/details?id=nl.webpearl.e_nee" class="download-btn">Download on Google Play</a>
         </div>
     </header>
-
     <main class="container main-content">
         <p class="intro-text">
             Wil je weten wat er écht in je eten zit? Maak je je zorgen over verborgen e-nummers, kunstmatige toevoegingen of schadelijke chemicaliën in je verzorgingsproducten? 
             Met E-nee scan je in een handomdraai de ingrediëntenlijst of barcode van elk product en zie je direct wat safe is en wat je beter kunt vermijden.
         </p>
 
-        <!-- AFBEELDINGEN SLIDER (8 SCREENSHOTS) -->
+        <!-- AFBEELDINGEN SLIDER (8 SCREENSHOTS GECHECKT MET STREEPJE) -->
         <div class="screenshot-slider">
             <div class="screenshot-wrapper">
                 <img src="images/e-nee/e-nee_00.webp" alt="E-nee Screenshot 0">
@@ -287,9 +319,8 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 WebPe@rl / AppPe@rl. Alle rechten voorbehouden.</p>
+        <p>&copy; 2026 WebPe@rl / appPe@rl. Alle rechten voorbehouden.</p>
         <p><a href="https://webpearl-dev.github.io/privacy-policy/enee">Privacy Policy</a></p>
     </footer>
-
 </body>
 </html>
