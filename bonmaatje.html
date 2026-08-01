@@ -22,6 +22,7 @@
             color: var(--text-light);
             line-height: 1.6;
         }
+
         .nav-container {
             max-width: 900px;
             margin: 20px auto 0 auto;
@@ -32,7 +33,7 @@
         .back-btn {
             display: inline-flex;
             align-items: center;
-            color: var(--orange-accent); /* Verander dit eventueel naar --orange-accent of --red-alert per app! */
+            color: var(--orange-accent);
             text-decoration: none;
             font-weight: bold;
             font-size: 0.95rem;
@@ -43,9 +44,25 @@
             transform: translateX(-5px);
         }
 
+        .translate-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .goog-te-combo {
+            background-color: var(--panel-dark) !important;
+            color: var(--text-light) !important;
+            border: 1px solid rgba(255,255,255,0.2) !important;
+            padding: 6px 10px !important;
+            border-radius: 8px !important;
+            font-family: inherit !important;
+        }
+
         header {
             background: linear-gradient(180deg, #030a17 0%, var(--bg-dark) 100%);
-            padding: 80px 20px 40px 20px;
+            padding: 40px 20px 40px 20px;
             text-align: center;
         }
 
@@ -115,7 +132,6 @@
             -webkit-overflow-scrolling: touch;
         }
 
-        /* Verberg de lelijke scrollbalk in Chrome/Safari */
         .screenshot-slider::-webkit-scrollbar {
             height: 8px;
         }
@@ -215,11 +231,6 @@
     </style>
 </head>
 <body>
-    <!-- TERUGKNOP BOVENAAN -->
-    <div class="nav-container">
-        <a href="index.html" class="back-btn">&larr; Terug naar overzicht</a>
-    </div>
-
     <!-- GOOGLE VERTAALKNOP -->
     <div class="translate-container">
         <div id="google_translate_element"></div>
@@ -234,13 +245,18 @@
             }, 'google_translate_element');
         }
     </script>
-    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript" src="https://google.com"></script>
+
+    <!-- TERUGKNOP BOVENAAN -->
+    <div class="nav-container">
+        <a href="index.html" class="back-btn">&larr; Terug naar overzicht</a>
+    </div>
 
     <header>
         <div class="container">
             <h1>Bon<span>Maatje</span></h1>
             <p class="tagline">Verlies nooit meer een kassabon of garantie. Jouw persoonlijke digitale administratie.</p>
-            <a href="https://play.google.com/store/apps/details?id=nl.webpearl.bonmaatje" class="download-btn">Download on Google Play</a>
+            <a href="https://google.com" class="download-btn">Download on Google Play</a>
         </div>
     </header>
 
@@ -298,8 +314,8 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 WebPe@rl / AppPe@rl. Alle rechten voorbehouden.</p>
-        <p><a href="https://webpearl-dev.github.io/privacy-policy/bonmaatje">Privacy Policy</a></p>
+        <p>&copy; 2026 WebPearl Dev / appPe@rl. Alle rechten voorbehouden.</p>
+        <p><a href="https://github.io">Privacy Policy</a></p>
     </footer>
 
 </body>
