@@ -22,6 +22,7 @@
             color: var(--text-light);
             line-height: 1.6;
         }
+
         .nav-container {
             max-width: 900px;
             margin: 20px auto 0 auto;
@@ -32,7 +33,7 @@
         .back-btn {
             display: inline-flex;
             align-items: center;
-            color: var(--gold-accent); /* Verander dit eventueel naar --orange-accent of --red-alert per app! */
+            color: var(--gold-accent);
             text-decoration: none;
             font-weight: bold;
             font-size: 0.95rem;
@@ -43,9 +44,26 @@
             transform: translateX(-5px);
         }
 
+        /* DIT ZORGT ERVOOR DAT DE KNOP RECHTSBOVEN ZWEEFT */
+        .translate-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .goog-te-combo {
+            background-color: var(--panel-dark) !important;
+            color: var(--text-light) !important;
+            border: 1px solid rgba(255,255,255,0.2) !important;
+            padding: 6px 10px !important;
+            border-radius: 8px !important;
+            font-family: inherit !important;
+        }
+
         header {
             background: linear-gradient(180deg, #05030a 0%, var(--bg-dark) 100%);
-            padding: 80px 20px 40px 20px;
+            padding: 40px 20px 40px 20px;
             text-align: center;
         }
 
@@ -90,16 +108,6 @@
             box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
         }
 
-        .intro-text {
-            text-align: center;
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            margin-bottom: 40px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
         /* SCREENSHOT SLIDER STYLING */
         .screenshot-slider {
             display: flex;
@@ -111,7 +119,6 @@
             -webkit-overflow-scrolling: touch;
         }
 
-        /* Verberg de lelijke scrollbalk in Chrome/Safari */
         .screenshot-slider::-webkit-scrollbar {
             height: 8px;
         }
@@ -206,7 +213,7 @@
     </style>
 </head>
 <body>
-    <!-- TERUGKNOP BOVENAAN -->
+   <!-- TERUGKNOP BOVENAAN -->
     <div class="nav-container">
         <a href="index.html" class="back-btn">&larr; Terug naar overzicht</a>
     </div>
