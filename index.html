@@ -40,10 +40,19 @@
             margin: 0 0 0.5rem 0;
         }
 
+        h2 {
+            grid-column: 1 / -1;
+            color: var(--text-main);
+            margin: 2rem 0 1rem 0;
+            border-bottom: 1px solid #1e293b;
+            padding-bottom: 0.5rem;
+        }
+
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 2rem;
+            margin-bottom: 3rem;
         }
 
         .card {
@@ -75,7 +84,13 @@
             color: var(--text-muted);
             font-size: 0.95rem;
             line-height: 1.5;
-            margin: 0;
+            margin: 0 0 1rem 0;
+        }
+
+        .btn-view {
+            color: var(--accent);
+            font-size: 0.9rem;
+            font-weight: 600;
         }
 
         .badge {
@@ -113,26 +128,50 @@
 
     <div class="container">
         <header>
-            <h1>WebPearl</h1>
-            <p style="color: var(--text-muted); margin: 0;">Overzicht van al mijn applicaties en games</p>
+            <h1>Web Pearl</h1>
+            <p style="color: var(--text-muted); margin: 0;">Mobiele Applicaties & Games Portfolio</p>
         </header>
 
+        <!-- Applicaties Sectie -->
+        <h2>📱 Applicaties</h2>
         <main class="grid">
+            <!-- WitchGuide -->
+            <a href="witchguide.html" class="card">
+                <div class="card-content">
+                    <span class="badge live">Live</span>
+                    <h3>WitchGuide</h3>
+                    <p>Je digitale metgezel voor dagelijkse rituelen, magie en spirituele wijsheid.</p>
+                    <span class="btn-view">Bekijk app</span>
+                </div>
+            </a>
+
             <!-- BonMaatje -->
             <a href="bonmaatje.html" class="card">
                 <div class="card-content">
                     <span class="badge live">Live</span>
                     <h3>BonMaatje</h3>
-                    <p>De slimme bonnenscanner en administratiehulp voor jouw uitgaven.</p>
+                    <p>Verlies nooit meer een kassabon of garantie. Jouw persoonlijke digitale administratie for al je aankopen.</p>
+                    <span class="btn-view">Bekijk app</span>
                 </div>
             </a>
 
-            <!-- E-Nee -->
+            <!-- BugOff -->
+            <a href="bugoff.html" class="card">
+                <div class="card-content">
+                    <span class="badge live">Live</span>
+                    <h3>BugOff</h3>
+                    <p>Scan voeding in de supermarkt met je camera en ontdek direct of er insecten in zijn verwerkt.</p>
+                    <span class="btn-view">Bekijk app</span>
+                </div>
+            </a>
+
+            <!-- E-nee -->
             <a href="e-nee.html" class="card">
                 <div class="card-content">
                     <span class="badge live">Live</span>
-                    <h3>E-Nee</h3>
-                    <p>Digitale brievenbussticker tegen ongewenste reclame en folders.</p>
+                    <h3>E-nee</h3>
+                    <p>Scan ingrediëntenlijsten en barcodes om verborgen E-nummers en schadelijke stoffen te vermijden.</p>
+                    <span class="btn-view">Bekijk app</span>
                 </div>
             </a>
 
@@ -141,7 +180,8 @@
                 <div class="card-content">
                     <span class="badge test">Test</span>
                     <h3>PhytoGo</h3>
-                    <p>Ontdek de kracht van planten en kruiden met deze interactieve gids.</p>
+                    <p>Ontdek de kracht van de natuur. Vind botanische recepten en raadpleeg betrouwbare wetenschappelijke bronnen.</p>
+                    <span class="btn-view">Bekijk app</span>
                 </div>
             </a>
 
@@ -150,7 +190,8 @@
                 <div class="card-content">
                     <span class="badge test">Test</span>
                     <h3>PillenCheck</h3>
-                    <p>Houd eenvoudig je medicatiegebruik bij en mis nooit meer een inname.</p>
+                    <p>Scan uw medicatie op verborgen hulpstoffen en E-nummers, en bekijk direct opgeschoonde, betrouwbare bijwerkingen.</p>
+                    <span class="btn-view">Bekijk app</span>
                 </div>
             </a>
 
@@ -160,9 +201,54 @@
                     <span class="badge test">Test</span>
                     <h3>PruttelPot</h3>
                     <p>De ultieme receptenapp met slimme importfuncties, weekplanner en een automatisch gesorteerde boodschappenlijst.</p>
+                    <span class="btn-view">Bekijk app</span>
                 </div>
             </a>
         </main>
+
+        <!-- Games Sectie -->
+        <h2>🎮 Games</h2>
+        <div class="grid">
+            <!-- DrakeCrystal -->
+            <a href="drakecrystal.html" class="card">
+                <div class="card-content">
+                    <span class="badge dev">In Ontwikkeling</span>
+                    <h3>DrakeCrystal</h3>
+                    <p>Een episch eerbetoon en moderne recreatie van de klassieke 8-bit kerker-RPG. Verken mysterieuze doolhoven.</p>
+                    <span class="btn-view">Bekijk game</span>
+                </div>
+            </a>
+
+            <!-- RummyNumbers -->
+            <a href="rummynumbers.html" class="card">
+                <div class="card-content">
+                    <span class="badge dev">In Ontwikkeling</span>
+                    <h3>RummyNumbers</h3>
+                    <p>Het legendarische, tactische cijferspel, volledig vloeiend en digitaal herbouwd voor urenlang speelplezier.</p>
+                    <span class="btn-view">Bekijk game</span>
+                </div>
+            </a>
+
+            <!-- Yatzing -->
+            <a href="yatzing.html" class="card">
+                <div class="card-content">
+                    <span class="badge dev">In Ontwikkeling</span>
+                    <h3>Yatzing</h3>
+                    <p>Gooi de dobbelstenen, scoor de beste combinaties en daag jezelf uit in dit klassieke en verslavende kansspel.</p>
+                    <span class="btn-view">Bekijk game</span>
+                </div>
+            </a>
+
+            <!-- LoGD -->
+            <a href="logd.html" class="card">
+                <div class="card-content">
+                    <span class="badge dev">Gepland</span>
+                    <h3>LoGD: Lord of the Golden Dragon</h3>
+                    <p>De legendarische tekst-RPG, volledig gemoderniseerd en geoptimaliseerd voor mobiele telefoons.</p>
+                    <span class="btn-view">Bekijk game</span>
+                </div>
+            </a>
+        </div>
     </div>
 
 </body>
