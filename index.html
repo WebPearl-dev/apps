@@ -3,283 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebPearl - Portfolio</title>
+    <title>WebPearl Portfolio</title>
     <style>
         :root {
-            --bg-dark: #071126;
-            --panel-dark: #0d1f42;
-            --orange-accent: #ff7900;
-            --blue-brand: #10316b;
-            --text-light: #f8fafc;
-            --text-muted: #94a3b8;
-            --status-live: #22c55e;
-            --status-test: #eab308;
-            --status-dev: #3b82f6;
-            --status-planned: #64748b;
+            --bg-color: #121214;
+            --card-bg: #1a1a1e;
+            --text-color: #eeeeee;
+            --text-muted: #aaaaaa;
+            --primary: #4f46e5;
+            --badge-live: #10b981;
+            --badge-test: #f59e0b;
         }
-        
         body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             margin: 0;
-            padding: 0;
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
             padding: 40px 20px;
         }
-
-        header {
-            text-align: center;
-            margin-bottom: 60px;
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
         }
-
         h1 {
-            font-size: 3rem;
-            margin: 0 0 10px 0;
-            color: var(--text-light);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
         }
-
-        h1 span {
-            color: var(--orange-accent);
-        }
-
-        .subtitle {
-            font-size: 1.2rem;
+        p.subtitle {
             color: var(--text-muted);
-            font-weight: 300;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
         }
-
-        h2 {
-            font-size: 1.8rem;
-            color: var(--orange-accent);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding-bottom: 10px;
-            margin-top: 40px;
-            margin-bottom: 25px;
-        }
-
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 100px));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
         }
-
         .card {
-            background-color: var(--panel-dark);
-            padding: 25px;
-            border-radius: 16px;
-            border: 1px solid rgba(255, 121, 0, 0.05);
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px;
             position: relative;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid #2a2a30;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            text-decoration: none;
-            color: inherit;
-            transition: all 0.3s ease;
         }
-
         .card:hover {
-            border-color: var(--orange-accent);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
         }
-
         .card-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
-
-        .card h3 {
+        .card-title {
+            font-size: 1.4rem;
             margin: 0;
-            font-size: 1.3rem;
-            color: var(--text-light);
+            font-weight: 600;
         }
-
         .badge {
             font-size: 0.75rem;
-            padding: 4px 10px;
-            border-radius: 50px;
+            padding: 4px 8px;
+            border-radius: 20px;
             font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
-
-        .badge.live { background-color: rgba(34, 197, 94, 0.2); color: var(--status-live); }
-        .badge.test { background-color: rgba(234, 179, 8, 0.2); color: var(--status-test); }
-        .badge.dev { background-color: rgba(59, 130, 246, 0.2); color: var(--status-dev); }
-        .badge.planned { background-color: rgba(100, 116, 139, 0.2); color: var(--status-planned); }
-
-        .card p {
+        .badge.live {
+            background-color: rgba(16, 185, 129, 0.2);
+            color: var(--badge-live);
+        }
+        .badge.test {
+            background-color: rgba(245, 158, 11, 0.2);
+            color: var(--badge-test);
+        }
+        .card-body p {
             color: var(--text-muted);
             font-size: 0.95rem;
+            line-height: 1.5;
             margin: 0 0 20px 0;
-            flex-grow: 1;
         }
-
         .card-footer {
-            color: var(--orange-accent);
-            font-weight: bold;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-        }
-
-        .card-footer::after {
-            content: ' →';
-            transition: transform 0.2s;
-        }
-
-        .card:hover .card-footer::after {
-            transform: translateX(4px);
-        }
-
-        footer {
-            text-align: center;
-            padding-top: 60px;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            margin-top: 60px;
+            font-size: 0.85rem;
+            color: var(--primary);
+            font-weight: 500;
         }
     </style>
 </head>
 <body>
-
     <div class="container">
-        <header>
-            <h1>Web<span>Pearl</span></h1>
-            <p class="subtitle">Mobiele Applicaties & Games Portfolio</p>
-        </header>
-
-        <main>
-            <h2>📱 Applicaties</h2>
-            <div class="grid">
-                <!-- WitchGuide -->
-                <a href="witchguide.html" class="card">
+        <h1>WebPearl Portfolio</h1>
+        <p class="subtitle">Overzicht van onze applicaties en lopende projecten.</p>
+        
+        <div class="grid">
+            <!-- E-Nee (Nu Live) -->
+            <a href="e-nee.html" class="card">
+                <div>
                     <div class="card-header">
-                        <h3>WitchGuide</h3>
+                        <h2 class="card-title">E-Nee</h2>
                         <span class="badge live">Live</span>
                     </div>
-                    <p>Je digitale metgezel voor dagelijkse rituelen, magie en spirituele wijsheid.</p>
-                    <div class="card-footer">Bekijk app</div>
-                </a>
-
-                <!-- BonMaatje -->
-                <a href="bonmaatje.html" class="card">
-                    <div class="card-header">
-                        <h3>BonMaatje</h3>
-                        <span class="badge live">Live</span>
+                    <div class="card-body">
+                        <p>Zeg simpel en snel nee tegen ongewenste digitale reclame en privacy-inbreuken.</p>
                     </div>
-                    <p>Verlies nooit meer een kassabon of garantie. Jouw persoonlijke digitale administratie voor al je aankopen.</p>
-                    <div class="card-footer">Bekijk app</div>
-                </a>
+                </div>
+                <div class="card-footer">Bekijk project &rarr;</div>
+            </a>
 
-                <!-- BugOff -->
-                <a href="bugoff.html" class="card">
+            <!-- PhytoGo (Nu Test) -->
+            <a href="phytogo.html" class="card">
+                <div>
                     <div class="card-header">
-                        <h3>BugOff</h3>
-                        <span class="badge live">Live</span>
-                    </div>
-                    <p>Scan voeding in de supermarkt met je camera en ontdek direct of er insecten in zijn verwerkt.</p>
-                    <div class="card-footer">Bekijk app</div>
-                </a>
-
-                <!-- E-nee -->
-                <a href="e-nee.html" class="card">
-                    <div class="card-header">
-                        <h3>E-nee</h3>
+                        <h2 class="card-title">PhytoGo</h2>
                         <span class="badge test">Test</span>
                     </div>
-                    <p>Scan ingrediëntenlijsten en barcodes om verborgen E-nummers en schadelijke stoffen te vermijden.</p>
-                    <div class="card-footer">Bekijk app</div>
-                </a>
+                    <div class="card-body">
+                        <p>Ontdek en leer alles over planten en natuurlijke toepassingen, nu beschikbaar voor testers in de Play Store.</p>
+                    </div>
+                </div>
+                <div class="card-footer">Bekijk project &rarr;</div>
+            </a>
 
-                <!-- PhytoGo -->
-                <a href="phytogo.html" class="card">
+            <!-- PillenCheck (Nu Test) -->
+            <a href="pillencheck.html" class="card">
+                <div>
                     <div class="card-header">
-                        <h3>PhytoGo</h3>
+                        <h2 class="card-title">PillenCheck</h2>
                         <span class="badge test">Test</span>
                     </div>
-                    <p>Ontdek de kracht van de natuur. Vind botanische recepten en raadpleeg betrouwbare wetenschappelijke bronnen.</p>
-                    <div class="card-footer">Bekijk app</div>
-                </a>
+                    <div class="card-body">
+                        <p>Houd eenvoudig je medicatiegebruik bij en controleer belangrijke informatie rechtstreeks in de Play Store testomgeving.</p>
+                    </div>
+                </div>
+                <div class="card-footer">Bekijk project &rarr;</div>
+            </a>
 
-                <!-- PillenCheck -->
-                <a href="pillencheck.html" class="card">
+            <!-- PruttelPot (Achteraan - Test) -->
+            <a href="pruttelpot.html" class="card">
+                <div>
                     <div class="card-header">
-                        <h3>PillenCheck</h3>
+                        <h2 class="card-title">PruttelPot</h2>
                         <span class="badge test">Test</span>
                     </div>
-                    <p>Scan uw medicatie op verborgen hulpstoffen en E-nummers, en bekijk direct opgeschoonde, betrouwbare bijwerkingen.</p>
-                    <div class="card-footer">Bekijk app</div>
-                </a>
-
-                <!-- PruttelPot -->
-                <a href="pruttelpot.html" class="card">
-                    <div class="card-header">
-                        <h3>PruttelPot</h3>
-                        <span class="badge test">Test</span>
+                    <div class="card-body">
+                        <p>De ultieme receptenapp met slimme importfuncties, weekplanner en een automatisch gesorteerde boodschappenlijst.</p>
                     </div>
-                    <p>De ultieme receptenapp met slimme importfuncties, weekplanner en een automatisch gesorteerde boodschappenlijst.</p>
-                    <div class="card-footer">Bekijk app</div>
-                </a>
-            </div>
-
-            <h2>🎮 Games</h2>
-            <div class="grid">
-                <!-- DrakeCrystal -->
-                <a href="drakecrystal.html" class="card">
-                    <div class="card-header">
-                        <h3>DrakeCrystal</h3>
-                        <span class="badge dev">In Ontwikkeling</span>
-                    </div>
-                    <p>Een episch eerbetoon en moderne recreatie van de klassieke 8-bit kerker-RPG. Verken mysterieuze doolhoven.</p>
-                    <div class="card-footer">Bekijk game</div>
-                </a>
-
-                <!-- RummyNumbers -->
-                <a href="rummynumbers.html" class="card">
-                    <div class="card-header">
-                        <h3>RummyNumbers</h3>
-                        <span class="badge dev">In Ontwikkeling</span>
-                    </div>
-                    <p>Het legendarische, tactische cijferspel, volledig vloeiend en digitaal herbouwd voor urenlang speelplezier.</p>
-                    <div class="card-footer">Bekijk game</div>
-                </a>
-
-                <!-- Yatzing -->
-                <a href="yatzing.html" class="card">
-                    <div class="card-header">
-                        <h3>Yatzing</h3>
-                        <span class="badge dev">In Ontwikkeling</span>
-                    </div>
-                    <p>Gooi de dobbelstenen, scoor de beste combinaties en daag jezelf uit in dit klassieke en verslavende kansspel.</p>
-                    <div class="card-footer">Bekijk game</div>
-                </a>
-
-                <!-- LoGD -->
-                <a href="logd.html" class="card">
-                    <div class="card-header">
-                        <h3>LoGD: Lord of the Golden Dragon</h3>
-                        <span class="badge planned">Gepland</span>
-                    </div>
-                    <p>De legendarische tekst-RPG, volledig gemoderniseerd en geoptimaliseerd voor mobiele telefoons.</p>
-                    <div class="card-footer">Bekijk game</div>
-                </a>
-            </div>
-        </main>
-
-        <footer>
-            <p>&copy; 2026 WebPe@rl. Alle rechten voorbehouden.</p>
-        </footer>
+                </div>
+                <div class="card-footer">Bekijk project &rarr;</div>
+            </a>
+        </div>
     </div>
-
 </body>
 </html>
