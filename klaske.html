@@ -3,89 +3,276 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klaske haar Kookworkshops - De App</title>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <title>Klaske haar Kookworkshops - Koken voor kinderen.</title>
     <style>
+        :root {
+            --bg-light: #FFFDF9;
+            --panel-white: #ffffff;
+            --orange-accent: #FF9800;
+            --orange-dark: #E65100;
+            --text-dark: #333333;
+            --text-muted: #666666;
+            --green-accent: #4CAF50;
+        }
+
         body {
-            font-family: 'Quicksand', sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
             line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #FFFDF9;
         }
+
+        .nav-container {
+            max-width: 900px;
+            margin: 20px auto 0 auto;
+            padding: 0 20px;
+            text-align: left;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            color: var(--orange-accent);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95rem;
+            transition: transform 0.2s;
+        }
+
+        .back-btn:hover {
+            transform: translateX(-5px);
+        }
+
         header {
+            background: linear-gradient(180deg, #FFE0B2 0%, var(--bg-light) 100%);
+            padding: 40px 20px 40px 20px;
             text-align: center;
-            padding: 40px 0;
-            background-color: #FF9800;
-            color: white;
-            border-radius: 20px;
-            margin-bottom: 30px;
         }
+
         .container {
-            background: white;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0 0 10px 0;
+            color: var(--text-dark);
+            letter-spacing: 1px;
+        }
+
+        h1 span {
+            color: var(--orange-accent);
+        }
+
+        .tagline {
+            font-size: 1.4rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            font-weight: 300;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--orange-accent), var(--orange-dark));
+            color: white;
+            padding: 16px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 4px 20px rgba(255, 152, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(255, 152, 0, 0.5);
+        }
+
+        .intro-text {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* SCREENSHOT SLIDER STYLING */
+        .screenshot-slider {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding: 20px 10px;
+            margin: 20px 0 60px 0;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .screenshot-slider::-webkit-scrollbar {
+            height: 8px;
+        }
+        .screenshot-slider::-webkit-scrollbar-track {
+            background: var(--bg-light);
+        }
+        .screenshot-slider::-webkit-scrollbar-thumb {
+            background: #FFE0B2;
+            border-radius: 10px;
+        }
+
+        .screenshot-wrapper {
+            flex: 0 0 auto;
+            width: 240px;
+            transition: transform 0.3s ease;
+        }
+
+        .screenshot-wrapper:hover {
+            transform: scale(1.03);
+        }
+
+        .screenshot-wrapper img {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            border: 2px solid rgba(255, 152, 0, 0.2);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--orange-accent);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background-color: var(--panel-white);
             padding: 30px;
             border-radius: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid rgba(255, 152, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
         }
-        h1, h2 { color: #E65100; }
-        .footer {
-            text-align: center;
-            margin-top: 50px;
-            font-size: 0.9em;
-            color: #666;
-        }
-        .btn {
+
+        .card h3 {
+            color: var(--text-dark);
+            margin-top: 0;
+            font-size: 1.4rem;
+            border-bottom: 2px solid var(--orange-accent);
+            padding-bottom: 5px;
             display: inline-block;
-            background: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
-            margin-top: 20px;
         }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            margin-top: 60px;
+        }
+
+        footer a {
+            color: var(--orange-accent);
+            text-decoration: none;
+        }
+
         .policy-box {
-            margin-top: 40px;
-            padding: 20px;
-            border-top: 2px solid #FFE0B2;
-            font-size: 0.95em;
+            margin-top: 60px;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 20px;
+            border: 1px solid #eee;
+            font-size: 0.95rem;
         }
     </style>
 </head>
 <body>
-
-<header>
-    <h1>Klaske haar Kookworkshops</h1>
-    <p>Met een beetje liefde, geduld en creativiteit kan ieder kind leren koken!</p>
-</header>
-
-<div class="container">
-    <h2>Over de App</h2>
-    <p>De officiële app van Klaske haar Kookworkshops brengt de kookstudio naar je broekzak. Ontdek de nieuwste recepten, bekijk vrolijke kookvideo's, boek een workshop of bestel een van de populaire kookpakketjes voor thuis.</p>
-
-    <a href="https://play.google.com/store/apps/details?id=nl.webpearl.klaske" class="btn">Bekijk in de Play Store</a>
-
-    <div class="policy-box">
-        <h2>Privacy Policy</h2>
-        <p><strong>Laatst bijgewerkt: 06-09-2026</strong></p>
-        <p>Klaske haar Kookworkshops ("de App") is ontwikkeld door <strong>WebPe@rl</strong> om kinderen en jongvolwassenen te inspireren in de keuken. Wij waarderen uw privacy en de App is ontworpen met het oog op dataminimalisatie.</p>
-
-        <h3>1. Gegevens</h3>
-        <p>Wij verzamelen geen direct identificeerbare privégegevens op onze servers. Favorieten worden uitsluitend lokaal op uw apparaat opgeslagen.</p>
-
-        <h3>2. Diensten van Derden</h3>
-        <p>De app maakt gebruik van Google Play Billing voor aankopen en toont live recepten via een beveiligde verbinding met de website van Klaske. Bij het bekijken van recepten gelden de privacy-instellingen van de website zelf.</p>
-
-        <h3>3. Contact</h3>
-        <p>Vragen? Neem contact op via <strong>webpearl@proton.me</strong></p>
+    <div class="nav-container">
+        <a href="index.html" class="back-btn">&larr; Terug naar overzicht</a>
     </div>
-</div>
 
-<div class="footer">
-    <p>&copy; 2026 Klaske haar Kookworkshops | Created by <a href="index.html">WebPe@rl</a></p>
-</div>
+    <header>
+        <div class="container">
+            <h1>Klaske haar <span>Kookworkshops</span></h1>
+            <p class="tagline">Met een beetje liefde, geduld en creativiteit kan ieder kind leren koken!</p>
+            <a href="https://play.google.com/store/apps/details?id=nl.webpearl.klaske" class="download-btn">Download op Google Play</a>
+        </div>
+    </header>
 
+    <main class="container">
+        <p class="intro-text">
+            Ontdek de vrolijke wereld van Klaske's Kookworkshops! Deze app is speciaal ontworpen voor kinderen en jongvolwassenen. Bekijk live de nieuwste recepten, volg instructievideo's, boek een uniek kookfeestje of bestel een compleet kookpakket voor thuis.
+        </p>
+
+        <!-- AFBEELDINGEN SLIDER -->
+        <div class="screenshot-slider">
+            <div class="screenshot-wrapper">
+                <img src="../assets/images/splash.png" alt="Klaske App Splash">
+            </div>
+            <div class="screenshot-wrapper">
+                <img src="images/klaske/klaske01.webp" alt="Screenshot 1">
+            </div>
+            <div class="screenshot-wrapper">
+                <img src="images/klaske/klaske02.webp" alt="Screenshot 2">
+            </div>
+            <div class="screenshot-wrapper">
+                <img src="images/klaske/klaske03.webp" alt="Screenshot 3">
+            </div>
+            <div class="screenshot-wrapper">
+                <img src="images/klaske/klaske04.webp" alt="Screenshot 4">
+            </div>
+            <div class="screenshot-wrapper">
+                <img src="images/klaske/klaske05.webp" alt="Screenshot 5">
+            </div>
+        </div>
+
+        <h2>Wat kun je met de App?</h2>
+        <div class="features-grid">
+            <div class="card">
+                <h3>Live Recepten</h3>
+                <p>Directe verbinding met de website voor de allernieuwste gerechten. Sla je favorieten op met een hartje om ze snel terug te vinden.</p>
+            </div>
+            <div class="card">
+                <h3>Kookpakketjes</h3>
+                <p>Bestel eenvoudig je favoriete mini-kookworkshop voor thuis, inclusief alle ingrediënten en een duidelijke handleiding.</p>
+            </div>
+            <div class="card">
+                <h3>Agenda & Events</h3>
+                <p>Blijf op de hoogte van alle markten, festivals en workshops waar Klaske te vinden is. Boek direct vanuit de app.</p>
+            </div>
+            <div class="card">
+                <h3>Thema Feestjes</h3>
+                <p>Bekijk alle magische thema's voor kinderfeestjes: van Frozen en Pizza Party tot Griezelen en Regenboog!</p>
+            </div>
+        </div>
+
+        <div class="policy-box">
+            <h2>Privacy Policy</h2>
+            <p><strong>Laatst bijgewerkt: 06-09-2026</strong></p>
+            <p>Klaske haar Kookworkshops ("de App") is ontwikkeld door <strong>WebPe@rl</strong> om kinderen en jongvolwassenen te inspireren in de keuken. Wij waarderen uw privacy en de App is ontworpen met het oog op dataminimalisatie.</p>
+            <h3>1. Gegevens</h3>
+            <p>Wij verzamelen geen direct identificeerbare privégegevens op onze servers. Favorieten worden uitsluitend lokaal op uw apparaat opgeslagen.</p>
+            <h3>2. Diensten van Derden</h3>
+            <p>De app maakt gebruik van Google Play Billing en toont live recepten via de website. Bij het bekijken van recepten gelden de privacy-instellingen van de website zelf.</p>
+            <h3>3. Contact</h3>
+            <p>Vragen? Neem contact op via <strong>webpearl@proton.me</strong></p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Klaske haar Kookworkshops | Ontwikkeld door WebPe@rl</p>
+    </footer>
 </body>
 </html>
