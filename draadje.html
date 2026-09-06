@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draadje - Jouw digitale haakassistent. Bewaar je patronen.</title>
+    <style>
+        :root {
+            --bg-dark: #071126;
+            --panel-dark: #0d1f42;
+            --orange-accent: #ff7900;
+            --blue-brand: #10316b;
+            --text-light: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .nav-container {
+            max-width: 900px;
+            margin: 20px auto 0 auto;
+            padding: 0 20px;
+            text-align: left;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            color: var(--orange-accent);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95rem;
+            transition: transform 0.2s;
+        }
+
+        .back-btn:hover {
+            transform: translateX(-5px);
+        }
+
+        .translate-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .goog-te-combo {
+            background-color: var(--panel-dark) !important;
+            color: var(--text-light) !important;
+            border: 1px solid rgba(255,255,255,0.2) !important;
+            padding: 6px 10px !important;
+            border-radius: 8px !important;
+            font-family: inherit !important;
+        }
+
+        header {
+            background: linear-gradient(180deg, #030a17 0%, var(--bg-dark) 100%);
+            padding: 40px 20px 40px 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin: 0 0 10px 0;
+            color: var(--text-light);
+            letter-spacing: 1px;
+        }
+
+        h1 span {
+            color: var(--orange-accent);
+        }
+
+        .tagline {
+            font-size: 1.4rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            font-weight: 300;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--orange-accent), #e05300);
+            color: white;
+            padding: 16px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 4px 20px rgba(255, 121, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(255, 121, 0, 0.5);
+        }
+
+        .intro-text {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* SCREENSHOT SLIDER STYLING */
+        .screenshot-slider {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding: 20px 10px;
+            margin: 20px 0 60px 0;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .screenshot-slider::-webkit-scrollbar {
+            height: 8px;
+        }
+        .screenshot-slider::-webkit-scrollbar-track {
+            background: var(--bg-dark);
+        }
+        .screenshot-slider::-webkit-scrollbar-thumb {
+            background: #1e3a6d;
+            border-radius: 10px;
+        }
+
+        .screenshot-wrapper {
+            flex: 0 0 auto;
+            width: 240px;
+            transition: transform 0.3s ease;
+        }
+
+        .screenshot-wrapper:hover {
+            transform: scale(1.03);
+        }
+
+        .screenshot-wrapper img {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            border: 2px solid rgba(255, 121, 0, 0.2);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .main-content {
+            padding: 40px 0;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--orange-accent);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background-color: var(--panel-dark);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 121, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--orange-accent);
+            transform: translateY(-2px);
+        }
+
+        .card h3 {
+            color: var(--text-light);
+            margin-top: 0;
+            font-size: 1.4rem;
+            border-bottom: 2px solid var(--orange-accent);
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            margin-bottom: 0;
+            margin-top: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 60px;
+        }
+
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin: 5px 0;
+        }
+
+        footer a {
+            color: var(--orange-accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- GOOGLE VERTAALKNOP -->
+    <div class="translate-container">
+        <div id="google_translate_element"></div>
+    </div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'nl', 
+                includedLanguages: 'en,de,fr,es,it',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <!-- TERUGKNOP BOVENAAN -->
+    <div class="nav-container">
+        <a href="index.html" class="back-btn">&larr; Terug naar overzicht</a>
+    </div>
+
+    <header>
+        <div class="container">
+            <h1>Draadje<span></span></h1>
+            <p class="tagline">Jouw persoonlijke digitale haakassistent. Organiseer je projecten en raak nooit meer de tel kwijt.</p>
+            <a href="https://google.com" class="download-btn">Download on Google Play</a>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <p class="intro-text">
+            Importeer eenvoudig je favoriete haakpatronen van internet, scan geprinte werkbeschrijvingen en houd je voortgang nauwkeurig bij.
+            Geen rondslingerende papieren of kwijtgeraakte aantekeningen meer. Met de ingebouwde toerenteller en projectnotities 
+            bewaar je het overzicht over al je amigurumi's, kledingstukken en dekens. Alles veilig en lokaal op jouw eigen apparaat.
+        </p>
+
+        <!-- AFBEELDINGEN SLIDER (SCREENSHOTS) -->
+        <div class="screenshot-slider">
+            <div class="screenshot-wrapper">
+                <img src="images/draadje/draadje_00.webp" alt="Draadje Splashscreen">
+            </div>
+            <div class="screenshot-wrapper">
+                <img src="images/draadje/draadje_01.webp" alt="Draadje Projectoverzicht">
+            </div>
+            <div class="screenshot-wrapper">
+                <img src="images/draadje/draadje_02.webp" alt="Draadje Toerenteller">
+            </div>
+            <div class="screenshot-wrapper">
+                <img src="images/draadje/draadje_03.webp" alt="Draadje Patroon Scanner">
+            </div>
+        </div>
+
+        <h2>Belangrijkste Functies</h2>
+        <div class="features-grid">
+            <div class="card">
+                <h3>Patronen Scannen</h3>
+                <p>Digitaliseer papieren haakpatronen in een handomdraai met de on-device tekstherkenning.</p>
+            </div>
+            <div class="card">
+                <h3>Toerenteller</h3>
+                <p>Raak nooit meer de tel kwijt tijdens het haken. Houd eenvoudig je rijen en herhalingen bij.</p>
+            </div>
+            <div class="card">
+                <h3>Lokale Opslag</h3>
+                <p>Jouw creaties en patronen zijn van jou. Alles wordt 100% veilig op je eigen toestel bewaard.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Draadje App. Alle rechten voorbehouden.</p>
+        <p><a href="privacy.html">Privacy Policy</a> | Contact: <a href="mailto:webpearl@proton.me">webpearl@proton.me</a></p>
+    </footer>
+</body>
+</html>
